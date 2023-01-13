@@ -1,0 +1,21 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        script(src='/scripts/search.js')
+        title #{title}.
+    body
+        include ../partials/header
+        div.main
+            div.form
+                h1 Search 
+                form(method="GET", action="/search/s/")
+                    input(type="text" name="search" id="search" placeholder="search")
+                    div.search-type
+                        label(for="search_type") username
+                        input(type="radio" name="search_type" id="search_type" value="username")
+                        label(for="search_type") artwork name 
+                        input(type="radio" name="search_type" id="search_type" value="name")
+                        label(for="search_type") category
+                        input(type="radio" name="search_type" id="search_type" value="category")
+                    input(type="submit" value="search")
+

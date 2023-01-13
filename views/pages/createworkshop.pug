@@ -1,0 +1,17 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        script(src='/scripts/gallery.js')
+        title 
+            | #{title}
+    body 
+        include ../partials/header
+        div.main
+            div.form
+                h1 create workshop:
+            
+                input(type="text" name="name" id = "name" placeholder="workshop name")
+                input(type="text" name="description" id="description" placeholder="description")
+                Button(onclick=`createWorkshop(${JSON.stringify({username: session.username, id: session.id})})`) create
+                div#login-error.error
+

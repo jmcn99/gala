@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sora:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+:root {
+    --main-green: #3e5438;
+    --accent-green: #5e7a5c;
+    --main-brown: rgb(60, 47, 34);
+    --accent-brown: rgb(80, 64, 47);
+}
+
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .links {
+    padding-right: 5px;
+}
+
+.header a {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+
+    text-decoration: none;
+    color: var(--accent-green);
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.header .button-right {
+    justify-self:flex-end}
+
+.header {
+    background-color: white;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* bottom box shadow */
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.10);
+}
+
+.header .logo {
+    display: inline-block;
+    padding: 4px;
+    padding-left: 12px;
+
+    font-size: 25px;
+    font-family: 'Jost', sans-serif;
+    background-image:linear-gradient(
+        -225deg,
+        rgb(43, 127, 42) 0%,
+        var(--accent-green) 25%,
+        var(--main-green) 50%,
+        var(--accent-brown) 75%,
+        var(--main-brown) 100%
+    );
+
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+
+
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}

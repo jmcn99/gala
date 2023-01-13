@@ -1,0 +1,14 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/index.css')
+        title notifications.
+    body
+        include ../partials/header
+
+        div.noti-container
+            for not in notifications 
+                div.notification
+                    a(href="/user/" + not.artistId).message #{not.artistName} 
+                    p.message  #{not.message}
+                    p.date #{not.date}
+            

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sora:wght@300&display=swap');
+
+:root {
+    --main-green: #3e5438;
+    --accent-green: #5e7a5c;
+    --main-brown: rgb(60, 47, 34);
+    --accent-brown: rgb(80, 64, 47);
+    --beige: #ecdcbf;
+}
+
+.form {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    background: #FFFFFF;
+    max-width: 350px;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 50px;
+    margin-top: 150px;
+}
+
+.form input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background: #f2f2f2;
+    border: 1px solid white;
+}
+
+.form button {
+    background: var(--accent-green);
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 0;
+    color: white;
+}
+
+.form a {
+    color: var(--main-green);
+    text-decoration: none;
+}
+
+.form a:hover {
+    color: var(--accent-green);
+}
+
+form:focus, input:focus{
+    outline: beige;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 15px;
+}
+
+.form button:hover {
+    background: var(--main-green);
+    cursor: pointer;
+}
+
+body {
+    margin: auto;
+    background-color: var(--beige);
+}
+
+
+.error {
+    color: red;
+    font-size: 15px;
+}

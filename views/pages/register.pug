@@ -1,0 +1,18 @@
+html 
+    head 
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        script(src='/scripts/login.js')
+
+        title 
+            | Register 
+    body
+        include ../partials/header
+        div.main
+            div.form
+                h1 Register
+                input(type="text" name="username" id="username" placeholder="username")
+                input(type="password" name="password" id="password" placeholder="password")
+                button(onclick="register()") register
+                div#register-error.error
+                p.message Already have an account? 
+                    a(href="/login") Login

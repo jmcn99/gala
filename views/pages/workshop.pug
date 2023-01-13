@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title workshop.
+        link(rel='stylesheet', href='/stylesheets/gallery.css')
+        script(src='/scripts/user.js')
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+
+    body 
+        include ../partials/header
+        div.workshop
+            div.left#left
+                div.workshop-info
+                    h1 #{workshop.name}
+                    - if (workshop.users.some(el => el.id == session.userId))
+                        button(onclick=`toggleWorkshop("${workshop._id.toString()}")` id="joinBtn") leave
+                    - else 
+                        button(onclick=`toggleWorkshop("${workshop._id.toString()}")` id="joinBtn") signup
+                    h2 description:    
+                    p #{workshop.description}
+
+                    h3 participants:
+                    ul.workshop-users
+                        for user in workshop.users
+                            li 
+                                a(href=`/user/${user.id}`) #{user.username}

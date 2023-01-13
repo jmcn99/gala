@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.12.0",
+    "pug": "^3.0.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "assignment5",
+  "version": "1.0.0",
+  "description": "COMP2406 Final Project",
+  "main": "server.js",
+  "author": "Joseph McNamara",
+  "license": "ISC"
+}

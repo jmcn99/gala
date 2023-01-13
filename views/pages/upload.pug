@@ -1,0 +1,30 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        script(src='/scripts/gallery.js')
+        title 
+            | upload 
+    body 
+        include ../partials/header
+        div.main
+            div.form
+                h1 upload art:
+            
+                input(type="text" name="image" id = "image" placeholder="image url")
+                input(type="text" name="name" id="name" placeholder="name")
+                input(type="text" name="year" id="year" placeholder="year")
+                select(name="category" id="category" placeholder="category")
+                    option(value="" disabled selected) category
+                    option(value="gorpcore") gorpcore
+                    option(value="streetwear") streetwear
+                    option(value="workwear") workwear
+                    option(value="vintage") vintage
+                    option(value="baggy") baggy 
+                    option(value="grunge") grunge
+                    option(value="skater") skater
+                    option(value="other") other
+
+                input(type="text" name="description" id="description" placeholder="description")
+                Button(onclick=`upload(${JSON.stringify({username: session.username, id: session.id})})`) upload
+                div#login-error.error
+

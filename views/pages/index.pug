@@ -1,0 +1,22 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/index.css')
+        title gala.
+    body
+        include ../partials/header
+        
+        div.homepage
+            div.container
+                h2 gala.
+                p a visual experience
+                div.buttons
+                    if session.loggedIn
+    
+                        a(href="/gallery") explore
+                        if session.user.artist
+                            a(href="/gallery/upload") upload
+                        else 
+                            a(href="/user") become an artist
+                    else
+                        a(href="/login")    login 
+                        a(href="/login/register") signup  

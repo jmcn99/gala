@@ -1,0 +1,19 @@
+html
+    head
+        link(rel='stylesheet', href='/stylesheets/header.css')
+    body 
+        div.header
+            a.logo(href="/") gala.
+            div.links
+                ul 
+                    
+                    if session.loggedIn
+                        if session.user.artist
+                            a(href="/workshop/createworkshop") workshop
+                            a(href="/gallery/upload") upload
+                        a(href="/search") search
+                        a(href="/user/notifications") notifications
+                        a(href="/gallery") explore
+                        a.button-right(href="/login/logout") logout
+                        a.button-right(href="/user") #{session.username}
+                        

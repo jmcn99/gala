@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title gala.
+        link(rel='stylesheet', href='/stylesheets/gallery.css')
+        script(src='/scripts/gallery.js')
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+
+
+        
+    body 
+        include ../partials/header
+        
+        div.gallery
+            h1 #{title}.
+            each picture in gallery 
+                    div.photo-container
+                        img(onclick=`genModal(${JSON.stringify(picture)}, "${session.userId}")` src=`${picture.image}` alt=`${picture.description}`)
+        div.pagination
+            if(search)
+                if (page > 1)
+                    a(href=`?search=${searchQuery}&search_type=${searchType}&page=${parseInt(page) - 1}`) previous
+                else 
+                    a(href=`?search=${searchQuery}&search_type=${searchType}&page=${page}`) previous
+                if (page < pages)
+                    a(href=`?search=${searchQuery}&search_type=${searchType}&page=${parseInt(page) + 1}`) next
+                else   
+                    a(href=`?search=${searchQuery}&search_type=${searchType}&page=${page}`) next
+            else
+                if (page > 1)
+                    a(href=`/gallery?page=${parseInt(page) - 1}`) previous
+                else 
+                    a(href=`/gallery?page=${page}`) previous
+                if (page < pages)
+                    a(href=`/gallery?page=${parseInt(page) + 1}`) next
+                else   
+                    a(href=`/gallery?page=${page}`) next
+        
+        div.img-modal#img-modal
+            div.modal-content
+                div.modal-header#modal-header
+                    span.close#close
+                        i.fas.fa-times close
+                    p.message#message
+                div.modal-body#modal-body
+                div.modal-footer#modal-footer
+                div.modal-likes#modal-likes
+                div.modal-reviews#modal-reviews
+                div.modal-new-review#modal-new-review
+                    
+                    
+                
+
+                        
+
